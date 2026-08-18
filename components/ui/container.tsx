@@ -1,0 +1,29 @@
+import React from "react";
+import { cn } from "@/lib/utils";
+
+interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+  as?: React.ElementType;
+}
+
+/**
+ * Responsive container wrapper ensuring pixel-perfect layout alignment
+ * across 390px mobile up to 1440px desktop viewport widths.
+ */
+export const Container: React.FC<ContainerProps> = ({
+  as: Component = "div",
+  className,
+  children,
+  ...props
+}) => {
+  return (
+    <Component
+      className={cn(
+        "w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
+};
