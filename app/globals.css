@@ -38,28 +38,28 @@
   }
 
   body {
-    @apply bg-[#FAFAFA] dark:bg-zinc-950 text-zinc-950 dark:text-zinc-100 font-sans antialiased selection:bg-emerald-100 dark:selection:bg-emerald-900/50 selection:text-emerald-900 dark:selection:text-emerald-100 transition-colors duration-200;
+    @apply bg-[#F5F1E8] dark:bg-[#11110F] text-[#111111] dark:text-[#F5F1E8] font-sans antialiased selection:bg-[#E7E9E4] dark:selection:bg-[#34312B] selection:text-[#111111] dark:selection:text-[#F5F1E8] transition-colors duration-200;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight font-semibold text-zinc-950 dark:text-zinc-50;
+    @apply tracking-tight font-bold text-[#111111] dark:text-[#F5F1E8];
   }
 }
 
 /* Subtle dot-grid background utility */
 .bg-grid-pattern {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(17, 17, 17, 0.06) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 .dark .bg-grid-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(245, 241, 232, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 /* Focus ring accessibility utility */
 .focus-ring {
-  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950;
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66705A] dark:focus-visible:ring-[#A4AF91] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F1E8] dark:focus-visible:ring-offset-[#11110F];
 }
 
 /* Hide scrollbar utility for horizontally scrollable tabs */

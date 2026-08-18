@@ -14,15 +14,15 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenOnboardi
   };
 
   return (
-    <section id="cta" aria-labelledby="cta-heading" className="py-16 sm:py-24 bg-white dark:bg-zinc-950 border-b border-zinc-200/80 dark:border-zinc-800/80 transition-colors duration-200">
+    <section id="cta" aria-labelledby="cta-heading" className="py-16 sm:py-24 bg-[#F5F1E8] dark:bg-[#11110F] border-b border-[#D9D2C5] dark:border-[#34312B] transition-colors duration-200">
       <Container>
-        <div className="relative rounded-2xl bg-zinc-950 dark:bg-zinc-900 text-white p-6 sm:p-10 lg:p-14 overflow-hidden shadow-xl border border-zinc-800">
+        <div className="relative rounded-2xl bg-[#111111] dark:bg-[#1D1B18] text-white p-6 sm:p-10 lg:p-14 overflow-hidden shadow-xl border border-[#2A2927] dark:border-[#34312B]">
           <div className="relative z-10 max-w-2xl mx-auto text-center space-y-5 sm:space-y-6">
             {/* Eyebrow Badge */}
             <div className="inline-flex items-center space-x-2">
               <Badge
                 variant="dark"
-                className="px-3 py-1 text-xs font-mono tracking-wider uppercase text-emerald-400 border-zinc-800 flex items-center space-x-1.5"
+                className="px-3 py-1 text-xs font-mono tracking-wider uppercase text-[#A4AF91] border-[#34312B] flex items-center space-x-1.5"
               >
                 <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
                 <span>Start Your Career Blueprint</span>
@@ -35,7 +35,7 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenOnboardi
             </h2>
 
             {/* Supporting Copy */}
-            <p className="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed max-w-xl mx-auto">
+            <p className="text-base sm:text-lg text-[#B7B0A4] font-normal leading-relaxed max-w-xl mx-auto">
               Build a clearer path from what you know today to what you want to become.
             </p>
 
@@ -49,16 +49,16 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenOnboardi
                     scrollToRoadmap();
                   }
                 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 h-12 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-base shadow-sm group transition-all focus-ring min-h-[48px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 h-12 rounded-lg bg-[#66705A] hover:bg-[#545E49] dark:bg-[#A4AF91] dark:hover:bg-[#8F9A7C] text-white dark:text-[#11110F] font-bold text-base shadow-sm group transition-all focus-ring min-h-[48px]"
               >
                 <span>Get Started</span>
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform text-emerald-200" aria-hidden="true" />
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform text-[#E7E9E4] dark:text-[#11110F]" aria-hidden="true" />
               </button>
             </div>
 
             {/* Value Tagline */}
-            <div className="pt-2 flex items-center justify-center space-x-2 text-xs text-zinc-400">
-              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" aria-hidden="true" />
+            <div className="pt-2 flex items-center justify-center space-x-2 text-xs text-[#B7B0A4]">
+              <ShieldCheck className="w-4 h-4 text-[#A4AF91] shrink-0" aria-hidden="true" />
               <span>Free interactive preview • No registration required</span>
             </div>
           </div>

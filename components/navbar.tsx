@@ -55,16 +55,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenOnboarding }) => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md transition-colors duration-200">
+    <header className="sticky top-0 z-40 w-full border-b border-[#D9D2C5] dark:border-[#34312B] bg-[#F5F1E8]/90 dark:bg-[#11110F]/90 backdrop-blur-md transition-colors duration-200">
       <Container className="flex items-center justify-between h-16">
         {/* Logo Brand */}
         <div className="flex items-center space-x-3">
           <a
             href="#"
-            className="flex items-center space-x-2 text-zinc-950 dark:text-zinc-50 font-bold text-lg tracking-tight focus-ring rounded-md p-1 -ml-1"
+            className="flex items-center space-x-2 text-[#111111] dark:text-[#F5F1E8] font-bold text-lg tracking-tight focus-ring rounded-md p-1 -ml-1"
           >
-            <div className="w-8 h-8 rounded-lg bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950 flex items-center justify-center shadow-xs">
-              <Compass className="w-4 h-4 text-emerald-400 dark:text-emerald-600" aria-hidden="true" />
+            <div className="w-8 h-8 rounded-lg bg-[#111111] dark:bg-[#F5F1E8] text-white dark:text-[#11110F] flex items-center justify-center shadow-xs">
+              <Compass className="w-4 h-4 text-[#A4AF91] dark:text-[#66705A]" aria-hidden="true" />
             </div>
             <span>PathPilot</span>
           </a>
@@ -72,39 +72,39 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenOnboarding }) => {
           {/* Status Badge */}
           <Badge
             variant="outline"
-            className="text-[11px] px-2 py-0.5 font-mono text-zinc-600 dark:text-zinc-400 border-zinc-200 dark:border-zinc-800 flex items-center space-x-1 dark:bg-zinc-900"
+            className="text-[11px] px-2 py-0.5 font-mono text-[#5F5A52] dark:text-[#B7B0A4] border-[#D9D2C5] dark:border-[#34312B] flex items-center space-x-1 bg-[#FBF9F4] dark:bg-[#1D1B18]"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#66705A] dark:bg-[#A4AF91] animate-pulse" aria-hidden="true" />
             <span>Beta</span>
           </Badge>
         </div>
 
         {/* Desktop Navigation Links */}
         <nav
-          className="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-600 dark:text-zinc-400"
+          className="hidden md:flex items-center space-x-8 text-sm font-medium text-[#5F5A52] dark:text-[#B7B0A4]"
           aria-label="Main Navigation"
         >
           <button
             onClick={() => scrollToSection("product")}
-            className="hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors focus-ring rounded px-1 py-0.5"
+            className="hover:text-[#111111] dark:hover:text-[#F5F1E8] transition-colors focus-ring rounded px-1 py-0.5"
           >
             Product
           </button>
           <button
             onClick={() => scrollToSection("how-it-works")}
-            className="hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors focus-ring rounded px-1 py-0.5"
+            className="hover:text-[#111111] dark:hover:text-[#F5F1E8] transition-colors focus-ring rounded px-1 py-0.5"
           >
             How it works
           </button>
           <button
             onClick={() => scrollToSection("roadmap")}
-            className="hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors focus-ring rounded px-1 py-0.5"
+            className="hover:text-[#111111] dark:hover:text-[#F5F1E8] transition-colors focus-ring rounded px-1 py-0.5"
           >
             Roadmaps
           </button>
           <button
             onClick={() => scrollToSection("problem")}
-            className="hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors focus-ring rounded px-1 py-0.5"
+            className="hover:text-[#111111] dark:hover:text-[#F5F1E8] transition-colors focus-ring rounded px-1 py-0.5"
           >
             Resources
           </button>
@@ -115,14 +115,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenOnboarding }) => {
           {/* Dark Mode Toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/70 focus-ring transition-colors"
+            className="p-2 rounded-lg text-[#5F5A52] dark:text-[#B7B0A4] hover:text-[#111111] dark:hover:text-[#F5F1E8] hover:bg-[#EEE9DE] dark:hover:bg-[#181714] focus-ring transition-colors"
             aria-label={theme === "light" ? "Switch to Dark Theme" : "Switch to Light Theme"}
             title={theme === "light" ? "Switch to Dark Theme" : "Switch to Light Theme"}
           >
             {theme === "light" ? (
               <Moon className="w-4 h-4" aria-hidden="true" />
             ) : (
-              <Sun className="w-4 h-4 text-amber-400" aria-hidden="true" />
+              <Sun className="w-4 h-4 text-[#A4AF91]" aria-hidden="true" />
             )}
           </button>
 
@@ -136,7 +136,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenOnboarding }) => {
               }
             }}
             size="sm"
-            className="group text-xs sm:text-sm font-medium bg-zinc-950 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-white text-white border border-transparent dark:border-zinc-200"
+            className="group text-xs sm:text-sm font-medium bg-[#111111] hover:bg-[#2A2927] dark:bg-[#F5F1E8] dark:text-[#11110F] dark:hover:bg-[#E5E0D5] text-white border border-transparent"
           >
             <span>Get Started</span>
             <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
@@ -148,13 +148,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenOnboarding }) => {
           {/* Theme Toggle Mobile */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 focus-ring"
+            className="p-2 rounded-lg text-[#5F5A52] dark:text-[#B7B0A4] hover:text-[#111111] dark:hover:text-[#F5F1E8] focus-ring"
             aria-label={theme === "light" ? "Switch to Dark Theme" : "Switch to Light Theme"}
           >
             {theme === "light" ? (
               <Moon className="w-4 h-4" aria-hidden="true" />
             ) : (
-              <Sun className="w-4 h-4 text-amber-400" aria-hidden="true" />
+              <Sun className="w-4 h-4 text-[#A4AF91]" aria-hidden="true" />
             )}
           </button>
 
@@ -167,14 +167,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenOnboarding }) => {
               }
             }}
             size="sm"
-            className="text-xs px-3 h-8 bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950"
+            className="text-xs px-3 h-8 bg-[#111111] dark:bg-[#F5F1E8] text-white dark:text-[#11110F]"
           >
             Get Started
           </Button>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 focus-ring rounded-md"
+            className="p-2 text-[#5F5A52] dark:text-[#B7B0A4] hover:text-[#111111] dark:hover:text-[#F5F1E8] focus-ring rounded-md"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-nav-drawer"
@@ -192,30 +192,30 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenOnboarding }) => {
       {mobileMenuOpen && (
         <div
           id="mobile-nav-drawer"
-          className="md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-lg px-4 py-5 space-y-4 shadow-lg transition-colors"
+          className="md:hidden border-t border-[#D9D2C5] dark:border-[#34312B] bg-[#FBF9F4]/95 dark:bg-[#1D1B18]/95 backdrop-blur-lg px-4 py-5 space-y-4 shadow-lg transition-colors"
         >
-          <nav className="flex flex-col space-y-3 font-medium text-zinc-700 dark:text-zinc-300" aria-label="Mobile Navigation">
+          <nav className="flex flex-col space-y-3 font-medium text-[#3F3B36] dark:text-[#B7B0A4]" aria-label="Mobile Navigation">
             <button
               onClick={() => scrollToSection("product")}
-              className="text-left py-2 hover:text-zinc-950 dark:hover:text-white border-b border-zinc-100 dark:border-zinc-800 focus-ring rounded px-1"
+              className="text-left py-2 hover:text-[#111111] dark:hover:text-white border-b border-[#D9D2C5]/50 dark:border-[#34312B] focus-ring rounded px-1"
             >
               Product
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}
-              className="text-left py-2 hover:text-zinc-950 dark:hover:text-white border-b border-zinc-100 dark:border-zinc-800 focus-ring rounded px-1"
+              className="text-left py-2 hover:text-[#111111] dark:hover:text-white border-b border-[#D9D2C5]/50 dark:border-[#34312B] focus-ring rounded px-1"
             >
               How it works
             </button>
             <button
               onClick={() => scrollToSection("roadmap")}
-              className="text-left py-2 hover:text-zinc-950 dark:hover:text-white border-b border-zinc-100 dark:border-zinc-800 focus-ring rounded px-1"
+              className="text-left py-2 hover:text-[#111111] dark:hover:text-white border-b border-[#D9D2C5]/50 dark:border-[#34312B] focus-ring rounded px-1"
             >
               Roadmaps
             </button>
             <button
               onClick={() => scrollToSection("problem")}
-              className="text-left py-2 hover:text-zinc-950 dark:hover:text-white border-b border-zinc-100 dark:border-zinc-800 focus-ring rounded px-1"
+              className="text-left py-2 hover:text-[#111111] dark:hover:text-white border-b border-[#D9D2C5]/50 dark:border-[#34312B] focus-ring rounded px-1"
             >
               Resources
             </button>

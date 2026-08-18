@@ -8,17 +8,17 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-zinc-950 text-white shadow-xs hover:bg-zinc-800 border border-zinc-800",
+          "bg-[#111111] dark:bg-[#F5F1E8] text-white dark:text-[#11110F] shadow-xs hover:bg-[#2A2927] dark:hover:bg-[#E5E0D5] border border-[#111111] dark:border-[#F5F1E8]",
         secondary:
-          "bg-white text-zinc-900 border border-zinc-200 shadow-xs hover:bg-zinc-50 hover:border-zinc-300",
+          "bg-[#FBF9F4] dark:bg-[#1D1B18] text-[#111111] dark:text-[#F5F1E8] border border-[#D9D2C5] dark:border-[#34312B] shadow-xs hover:bg-[#EEE9DE] dark:hover:bg-[#181714]",
         emerald:
-          "bg-emerald-600 text-white shadow-xs hover:bg-emerald-700 border border-emerald-700",
+          "bg-[#66705A] dark:bg-[#A4AF91] text-white dark:text-[#11110F] shadow-xs hover:bg-[#545E49] dark:hover:bg-[#8F9A7C] border border-[#545E49] dark:border-[#8F9A7C]",
         outline:
-          "border border-zinc-200 bg-transparent text-zinc-900 hover:bg-zinc-100 hover:text-zinc-950",
+          "border border-[#D9D2C5] dark:border-[#34312B] bg-transparent text-[#111111] dark:text-[#F5F1E8] hover:bg-[#EEE9DE] dark:hover:bg-[#181714]",
         ghost:
-          "bg-transparent text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950",
+          "bg-transparent text-[#5F5A52] dark:text-[#B7B0A4] hover:bg-[#EEE9DE] dark:hover:bg-[#181714] hover:text-[#111111] dark:hover:text-[#F5F1E8]",
         link:
-          "text-emerald-700 underline-offset-4 hover:underline p-0 h-auto font-normal",
+          "text-[#66705A] dark:text-[#A4AF91] underline-offset-4 hover:underline p-0 h-auto font-normal",
       },
       size: {
         sm: "h-8 px-3 text-xs rounded-md",

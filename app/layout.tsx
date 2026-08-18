@@ -43,8 +43,7 @@ export default function RootLayout({
               (function() {
                 try {
                   var saved = localStorage.getItem('pathpilot-theme');
-                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (saved === 'dark' || (!saved && prefersDark)) {
+                  if (saved === 'dark') {
                     document.documentElement.classList.add('dark');
                   } else {
                     document.documentElement.classList.remove('dark');
@@ -55,7 +54,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#FAFAFA] dark:bg-zinc-950 text-zinc-950 dark:text-zinc-100 font-sans antialiased overflow-x-hidden transition-colors duration-200">
+      <body className="min-h-screen flex flex-col bg-[#F5F1E8] dark:bg-[#11110F] text-[#111111] dark:text-[#F5F1E8] font-sans antialiased overflow-x-hidden transition-colors duration-200">
         {children}
       </body>
     </html>

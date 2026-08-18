@@ -20,7 +20,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFAFA] dark:bg-zinc-950 transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-[#F5F1E8] dark:bg-[#11110F] transition-colors duration-200">
       <Navbar onOpenOnboarding={handleOpenOnboarding} />
       <main className="flex-1">
         <HeroSection onOpenOnboarding={handleOpenOnboarding} />

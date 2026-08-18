@@ -31,19 +31,19 @@ export const Footer: React.FC = () => {
 
   return (
     <>
-      <footer className="bg-zinc-950 text-zinc-400 border-t border-zinc-900 py-12 text-sm">
+      <footer className="bg-[#11110F] text-[#B7B0A4] border-t border-[#34312B] py-12 text-sm">
         <Container className="space-y-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Logo & Tagline */}
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white">
-                <Compass className="w-4 h-4 text-emerald-400" aria-hidden="true" />
+              <div className="w-8 h-8 rounded-lg bg-[#181714] border border-[#34312B] flex items-center justify-center text-white">
+                <Compass className="w-4 h-4 text-[#A4AF91]" aria-hidden="true" />
               </div>
-              <span className="font-bold text-base text-white tracking-tight">PathPilot</span>
+              <span className="font-bold text-base text-[#F5F1E8] tracking-tight">PathPilot</span>
             </div>
 
             {/* Footer Navigation Links */}
-            <nav className="flex flex-wrap justify-center gap-6 text-xs sm:text-sm font-medium text-zinc-400" aria-label="Footer Navigation">
+            <nav className="flex flex-wrap justify-center gap-6 text-xs sm:text-sm font-medium text-[#B7B0A4]" aria-label="Footer Navigation">
               <button
                 onClick={() => scrollToSection("product")}
                 className="hover:text-white transition-colors focus-ring rounded px-1"
@@ -71,14 +71,14 @@ export const Footer: React.FC = () => {
             </nav>
           </div>
 
-          <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+          <div className="pt-8 border-t border-[#34312B] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6B665E]">
             <p>© {new Date().getFullYear()} PathPilot. All rights reserved.</p>
 
             {/* Tiny v1.0 label - Easter Egg Trigger (5 clicks within 2s) */}
             <button
               onClick={handleVersionClick}
               type="button"
-              className="text-zinc-600 hover:text-zinc-500 font-mono text-[11px] transition-colors focus:outline-none focus:text-zinc-400 cursor-default"
+              className="text-[#6B665E] hover:text-[#B7B0A4] font-mono text-[11px] transition-colors focus:outline-none focus:text-[#F5F1E8] cursor-default"
               aria-label="Application version v1.0"
             >
               v1.0
