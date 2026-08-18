@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Compass, Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
+import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
@@ -61,12 +61,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenOnboarding }) => {
         <div className="flex items-center space-x-3">
           <a
             href="#"
-            className="flex items-center space-x-2 text-[#111111] dark:text-[#F5F1E8] font-bold text-lg tracking-tight focus-ring rounded-md p-1 -ml-1"
+            className="text-[#111111] dark:text-[#F5F1E8] font-bold text-lg sm:text-xl tracking-tight focus-ring rounded-md p-1 -ml-1"
           >
-            <div className="w-8 h-8 rounded-lg bg-[#111111] dark:bg-[#F5F1E8] text-white dark:text-[#11110F] flex items-center justify-center shadow-xs">
-              <Compass className="w-4 h-4 text-[#A4AF91] dark:text-[#66705A]" aria-hidden="true" />
-            </div>
-            <span>PathPilot</span>
+            PathPilot
           </a>
 
           {/* Status Badge */}

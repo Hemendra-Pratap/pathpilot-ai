@@ -1,7 +1,6 @@
 import React from "react";
-import { ArrowRight, Play, Sparkles, ShieldCheck } from "lucide-react";
+import { ArrowRight, Play, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { Badge } from "@/components/ui/badge";
 import { HeroDashboard } from "./hero-dashboard";
 
 interface HeroSectionProps {
@@ -15,26 +14,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenOnboarding }) =>
   };
 
   return (
-    <section aria-label="Hero" className="relative pt-10 pb-14 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 bg-grid-pattern border-b border-[#D9D2C5] dark:border-[#34312B] transition-colors duration-200">
+    <section aria-label="Hero" className="relative pt-12 pb-14 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 bg-grid-pattern border-b border-[#D9D2C5] dark:border-[#34312B] transition-colors duration-200">
       {/* Background Soft Mask */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#F5F1E8] via-transparent to-[#F5F1E8] dark:from-[#11110F] dark:via-transparent dark:to-[#11110F] pointer-events-none" aria-hidden="true" />
 
       <Container className="relative z-10 space-y-10 sm:space-y-14">
         {/* Hero Narrative Block */}
-        <div className="text-center max-w-3xl mx-auto space-y-5 sm:space-y-6">
-          {/* Eyebrow Badge */}
-          <div className="inline-flex items-center space-x-2">
-            <Badge
-              variant="emerald"
-              className="px-3 py-1 text-xs font-mono tracking-wider uppercase flex items-center space-x-1.5 shadow-xs"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#66705A] dark:text-[#A4AF91]" aria-hidden="true" />
-              <span>Career Intelligence Platform</span>
-            </Badge>
-          </div>
-
+        <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6">
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#111111] dark:text-[#F5F1E8] leading-[1.12]">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#111111] dark:text-[#F5F1E8] leading-[1.08] max-w-3xl mx-auto">
             Your career shouldn't be a guess.
           </h1>
 
