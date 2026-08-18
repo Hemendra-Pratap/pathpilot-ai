@@ -9,9 +9,26 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ROADMAP_TRACKS, RoadmapTrack } from "@/data/roadmapData";
 
-export const RoadmapExplorer: React.FC = () => {
-  const [activeTrackId, setActiveTrackId] = useState<"ai-ml" | "frontend" | "backend">("ai-ml");
+interface RoadmapExplorerProps {
+  activeTrackId?: "ai-ml" | "frontend" | "backend";
+  onTrackChange?: (trackId: "ai-ml" | "frontend" | "backend") => void;
+}
+
+export const RoadmapExplorer: React.FC<RoadmapExplorerProps> = ({
+  activeTrackId: externalTrackId,
+  onTrackChange,
+}) => {
+  const [internalTrackId, setInternalTrackId] = useState<"ai-ml" | "frontend" | "backend">("ai-ml");
   const tabListRef = useRef<HTMLDivElement>(null);
+
+  const activeTrackId = externalTrackId ?? internalTrackId;
+
+  const setActiveTrackId = (trackId: "ai-ml" | "frontend" | "backend") => {
+    setInternalTrackId(trackId);
+    if (onTrackChange) {
+      onTrackChange(trackId);
+    }
+  };
 
   const currentTrack: RoadmapTrack = ROADMAP_TRACKS[activeTrackId];
 
@@ -39,7 +56,7 @@ export const RoadmapExplorer: React.FC = () => {
           ref={tabListRef}
           role="tablist"
           aria-label="Engineering Career Paths"
-          className="inline-flex items-center p-1.5 rounded-xl bg-zinc-200/70 border border-zinc-200 text-zinc-600 shadow-xs max-w-full overflow-x-auto no-scrollbar w-full sm:w-auto"
+          className="inline-flex items-center p-1.5 rounded-xl bg-zinc-200/70 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 shadow-xs max-w-full overflow-x-auto no-scrollbar w-full sm:w-auto"
         >
           {(["ai-ml", "frontend", "backend"] as const).map((trackId) => {
             const track = ROADMAP_TRACKS[trackId];
@@ -57,8 +74,8 @@ export const RoadmapExplorer: React.FC = () => {
                 onKeyDown={(e) => handleKeyDown(e, trackId)}
                 className={`relative px-4 sm:px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-150 focus-ring whitespace-nowrap min-h-[44px] flex-1 sm:flex-none flex items-center justify-center ${
                   isActive
-                    ? "bg-white text-zinc-950 shadow-xs border border-zinc-200"
-                    : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-200/50"
+                    ? "bg-white dark:bg-zinc-900 text-zinc-950 dark:text-zinc-50 shadow-xs border border-zinc-200 dark:border-zinc-700"
+                    : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-200 hover:bg-zinc-200/50 dark:hover:bg-zinc-700/50"
                 }`}
               >
                 <span className="relative z-10 flex items-center space-x-2">
@@ -81,23 +98,23 @@ export const RoadmapExplorer: React.FC = () => {
         className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start transition-all duration-200"
       >
         {/* Left Column: Sequential Skill Nodes List */}
-        <div className="lg:col-span-7 bg-white p-5 sm:p-7 rounded-2xl border border-zinc-200 shadow-xs space-y-5">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-zinc-100 gap-2">
+        <div className="lg:col-span-7 bg-white dark:bg-zinc-900 p-5 sm:p-7 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-xs space-y-5">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-zinc-100 dark:border-zinc-800 gap-2">
             <div>
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-500 block">
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 block">
                 TARGET PATH
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 dark:text-zinc-50 tracking-tight">
                 {currentTrack.roleTitle}
               </h3>
             </div>
 
-            <Badge variant="emerald" className="text-xs font-mono self-start sm:self-auto shrink-0">
+            <Badge variant="emerald" className="text-xs font-mono self-start sm:self-auto shrink-0 dark:bg-emerald-950/60 dark:border-emerald-800 dark:text-emerald-300">
               6 Progression Nodes
             </Badge>
           </div>
 
-          <p className="text-sm text-zinc-600 leading-relaxed font-normal">
+          <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed font-normal">
             {currentTrack.description}
           </p>
 
@@ -106,32 +123,32 @@ export const RoadmapExplorer: React.FC = () => {
             {currentTrack.nodes.map((node) => (
               <li
                 key={node.stepNumber}
-                className="flex items-start space-x-3 sm:space-x-3.5 p-3 sm:p-3.5 rounded-xl bg-zinc-50 border border-zinc-200/70 hover:border-zinc-300 transition-colors"
+                className="flex items-start space-x-3 sm:space-x-3.5 p-3 sm:p-3.5 rounded-xl bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200/70 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
               >
-                <div className="shrink-0 w-7 h-7 rounded-lg bg-zinc-950 text-white font-mono text-xs font-bold flex items-center justify-center shadow-xs mt-0.5" aria-hidden="true">
+                <div className="shrink-0 w-7 h-7 rounded-lg bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950 font-mono text-xs font-bold flex items-center justify-center shadow-xs mt-0.5" aria-hidden="true">
                   {node.stepNumber}
                 </div>
 
                 <div className="flex-1 space-y-1 min-w-0">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                    <span className="text-sm font-bold text-zinc-900 truncate">
+                    <span className="text-sm font-bold text-zinc-900 dark:text-zinc-100 truncate">
                       {node.title}
                     </span>
                     <span
                       className={`text-[11px] font-mono font-semibold px-2 py-0.5 rounded border self-start sm:self-auto shrink-0 ${
                         node.status === "Mastered"
-                          ? "bg-emerald-50 text-emerald-800 border-emerald-200"
+                          ? "bg-emerald-50 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/70"
                           : node.status === "In Progress"
-                          ? "bg-blue-50 text-blue-800 border-blue-200"
+                          ? "bg-blue-50 dark:bg-blue-950/70 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-800/70"
                           : node.status === "Upcoming"
-                          ? "bg-zinc-100 text-zinc-700 border-zinc-200"
-                          : "bg-amber-50 text-amber-800 border-amber-200"
+                          ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-200 dark:border-zinc-700"
+                          : "bg-amber-50 dark:bg-amber-950/70 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-800/70"
                       }`}
                     >
                       {node.status}
                     </span>
                   </div>
-                  <p className="text-xs text-zinc-500 font-normal leading-relaxed">
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400 font-normal leading-relaxed">
                     {node.description}
                   </p>
                 </div>
@@ -142,7 +159,7 @@ export const RoadmapExplorer: React.FC = () => {
 
         {/* Right Column: Capstone Portfolio Card */}
         <div className="lg:col-span-5 space-y-5">
-          <div className="bg-zinc-950 text-white p-5 sm:p-7 rounded-2xl border border-zinc-800 shadow-lg space-y-5">
+          <div className="bg-zinc-950 dark:bg-zinc-900 text-white p-5 sm:p-7 rounded-2xl border border-zinc-800 shadow-lg space-y-5">
             <div className="space-y-2">
               <div className="flex items-center justify-between flex-wrap gap-2">
                 <Badge variant="dark" className="text-[11px] uppercase tracking-wider text-emerald-400 font-mono">
@@ -172,7 +189,7 @@ export const RoadmapExplorer: React.FC = () => {
                 {currentTrack.capstoneHighlight.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2.5 py-1 text-xs font-mono bg-zinc-900 border border-zinc-800 text-zinc-200 rounded-md"
+                    className="px-2.5 py-1 text-xs font-mono bg-zinc-900 dark:bg-zinc-800 border border-zinc-800 dark:border-zinc-700 text-zinc-200 rounded-md"
                   >
                     {tech}
                   </span>
@@ -196,12 +213,12 @@ export const RoadmapExplorer: React.FC = () => {
           </div>
 
           {/* Honest Insight Callout */}
-          <div className="p-5 rounded-xl bg-white border border-zinc-200 shadow-xs space-y-2">
-            <div className="flex items-center space-x-2 text-xs font-semibold text-zinc-950 uppercase tracking-wider font-mono">
-              <Sparkles className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
+          <div className="p-5 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-xs space-y-2">
+            <div className="flex items-center space-x-2 text-xs font-semibold text-zinc-950 dark:text-zinc-50 uppercase tracking-wider font-mono">
+              <Sparkles className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" aria-hidden="true" />
               <span>Deterministic Ordering</span>
             </div>
-            <p className="text-xs text-zinc-600 leading-relaxed">
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
               Notice how prerequisites build directly into production capstones. You don't skip steps; you build verifiable engineering proof.
             </p>
           </div>

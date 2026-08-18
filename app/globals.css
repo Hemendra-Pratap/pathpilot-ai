@@ -38,12 +38,12 @@
   }
 
   body {
-    @apply bg-[#FAFAFA] text-zinc-950 font-sans antialiased selection:bg-emerald-100 selection:text-emerald-900;
+    @apply bg-[#FAFAFA] dark:bg-zinc-950 text-zinc-950 dark:text-zinc-100 font-sans antialiased selection:bg-emerald-100 dark:selection:bg-emerald-900/50 selection:text-emerald-900 dark:selection:text-emerald-100 transition-colors duration-200;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight font-semibold text-zinc-950;
+    @apply tracking-tight font-semibold text-zinc-950 dark:text-zinc-50;
   }
 }
 
@@ -52,10 +52,14 @@
   background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
 }
+.dark .bg-grid-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
 
 /* Focus ring accessibility utility */
 .focus-ring {
-  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950;
 }
 
 /* Hide scrollbar utility for horizontally scrollable tabs */

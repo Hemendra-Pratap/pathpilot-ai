@@ -15,12 +15,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PathPilot AI — Turn Your Skills Into Your Next Career Move",
+  title: "PathPilot — Turn Your Skills Into Your Next Career Move",
   description:
-    "PathPilot AI turns your skills, projects, and career goals into a personalized roadmap for what to learn, build, and do next.",
+    "PathPilot helps early-career developers understand their strengths, identify skill gaps and build a practical roadmap toward their next career goal.",
   authors: [{ name: "PathPilot Team" }],
   keywords: [
-    "AI Career Coach",
+    "Career Intelligence",
+    "Career Readiness",
     "Skill Gap Analysis",
     "Software Engineering Roadmap",
     "Machine Learning Career",
@@ -34,8 +35,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="min-h-screen flex flex-col bg-[#FAFAFA] text-zinc-950 font-sans antialiased overflow-x-hidden">
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('pathpilot-theme');
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (saved === 'dark' || (!saved && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-screen flex flex-col bg-[#FAFAFA] dark:bg-zinc-950 text-zinc-950 dark:text-zinc-100 font-sans antialiased overflow-x-hidden transition-colors duration-200">
         {children}
       </body>
     </html>

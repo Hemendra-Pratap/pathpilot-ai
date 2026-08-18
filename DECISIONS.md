@@ -13,7 +13,7 @@ Next.js 15 (App Router), TypeScript, and Tailwind CSS were selected to deliver a
 **Scope Choice**: The project intentionally prioritizes front-end polish, responsive QA, WAI-ARIA accessibility, and UX density over building a complete backend database or authentication service, as the challenge evaluates the product landing page and interactive demo experience.
 
 **What would be added with a full week**:
-1. **Dynamic AI Engine API**: Connect a live Gemini / LLM backend route (`/api/analyze`) for real-time skill assessment generation from raw user inputs.
+1. **Dynamic Intelligence Engine API**: Connect a live backend route (`/api/analyze`) for real-time skill assessment generation from raw user inputs.
 2. **Persistence & Auth**: Integrate NextAuth / Clerk with PostgreSQL (Prisma/Drizzle) to save user roadmap progress and portfolio capstone submissions.
 3. **Interactive Roadmap Builder**: Allow users to dynamically drag, reorder, and customize skill nodes with automated prerequisite validation.
 

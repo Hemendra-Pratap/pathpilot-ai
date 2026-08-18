@@ -3,11 +3,20 @@ import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 
-export const FinalCtaSection: React.FC = () => {
+interface FinalCtaSectionProps {
+  onOpenOnboarding?: () => void;
+}
+
+export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenOnboarding }) => {
+  const scrollToRoadmap = () => {
+    const el = document.getElementById("roadmap");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section id="cta" aria-labelledby="cta-heading" className="py-16 sm:py-24 bg-white border-b border-zinc-200/80">
+    <section id="cta" aria-labelledby="cta-heading" className="py-16 sm:py-24 bg-white dark:bg-zinc-950 border-b border-zinc-200/80 dark:border-zinc-800/80 transition-colors duration-200">
       <Container>
-        <div className="relative rounded-2xl bg-zinc-950 text-white p-6 sm:p-10 lg:p-14 overflow-hidden shadow-xl border border-zinc-800">
+        <div className="relative rounded-2xl bg-zinc-950 dark:bg-zinc-900 text-white p-6 sm:p-10 lg:p-14 overflow-hidden shadow-xl border border-zinc-800">
           <div className="relative z-10 max-w-2xl mx-auto text-center space-y-5 sm:space-y-6">
             {/* Eyebrow Badge */}
             <div className="inline-flex items-center space-x-2">
@@ -32,13 +41,19 @@ export const FinalCtaSection: React.FC = () => {
 
             {/* Primary Action Button */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a
-                href="#roadmap"
+              <button
+                onClick={() => {
+                  if (onOpenOnboarding) {
+                    onOpenOnboarding();
+                  } else {
+                    scrollToRoadmap();
+                  }
+                }}
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 h-12 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-base shadow-sm group transition-all focus-ring min-h-[48px]"
               >
-                <span>Build my roadmap</span>
+                <span>Get Started</span>
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform text-emerald-200" aria-hidden="true" />
-              </a>
+              </button>
             </div>
 
             {/* Value Tagline */}

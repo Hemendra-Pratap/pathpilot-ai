@@ -16,22 +16,22 @@ const ProblemCard: React.FC<ProblemCardProps> = ({
   description,
   icon,
 }) => (
-  <div className="group rounded-xl border border-zinc-200 bg-white p-6 sm:p-7 shadow-xs hover:border-zinc-300 transition-all duration-200 flex flex-col justify-between space-y-6 h-full">
+  <div className="group rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 sm:p-7 shadow-xs hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-200 flex flex-col justify-between space-y-6 h-full">
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <span className="font-mono text-2xl font-bold text-zinc-300 group-hover:text-emerald-600 transition-colors" aria-hidden="true">
+        <span className="font-mono text-2xl font-bold text-zinc-300 dark:text-zinc-700 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors" aria-hidden="true">
           {number}
         </span>
-        <div className="w-10 h-10 rounded-lg bg-zinc-50 border border-zinc-200/80 flex items-center justify-center text-zinc-600 group-hover:text-emerald-600 group-hover:bg-emerald-50/50 group-hover:border-emerald-200 transition-colors shrink-0" aria-hidden="true">
+        <div className="w-10 h-10 rounded-lg bg-zinc-50 dark:bg-zinc-800 border border-zinc-200/80 dark:border-zinc-700 flex items-center justify-center text-zinc-600 dark:text-zinc-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 group-hover:bg-emerald-50/50 dark:group-hover:bg-emerald-950/40 group-hover:border-emerald-200 dark:group-hover:border-emerald-800 transition-colors shrink-0" aria-hidden="true">
           {icon}
         </div>
       </div>
 
       <div className="space-y-2">
-        <h3 className="text-lg sm:text-xl font-bold text-zinc-950 tracking-tight">
+        <h3 className="text-lg sm:text-xl font-bold text-zinc-950 dark:text-zinc-50 tracking-tight">
           {title}
         </h3>
-        <p className="text-sm text-zinc-600 leading-relaxed font-normal">
+        <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed font-normal">
           {description}
         </p>
       </div>
@@ -41,14 +41,14 @@ const ProblemCard: React.FC<ProblemCardProps> = ({
 
 export const ProblemSection: React.FC = () => {
   return (
-    <section id="problem" aria-labelledby="problem-heading" className="py-16 sm:py-24 bg-white border-y border-zinc-200/80">
+    <section id="problem" aria-labelledby="problem-heading" className="py-16 sm:py-24 bg-white dark:bg-zinc-950 border-y border-zinc-200/80 dark:border-zinc-800/80 transition-colors duration-200">
       <Container className="space-y-12 sm:space-y-16">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3.5 sm:space-y-4">
-          <Badge variant="secondary" className="text-xs font-mono uppercase tracking-wider">
+          <Badge variant="secondary" className="text-xs font-mono uppercase tracking-wider dark:bg-zinc-800 dark:text-zinc-300">
             The Early-Career Reality
           </Badge>
-          <h2 id="problem-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-950 leading-tight">
+          <h2 id="problem-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50 leading-tight">
             The problem isn't information.<br className="hidden sm:inline" /> It's knowing what matters next.
           </h2>
         </div>
@@ -77,8 +77,8 @@ export const ProblemSection: React.FC = () => {
 
         {/* Closing Highlight Pill */}
         <div className="text-center pt-2">
-          <div className="inline-flex items-center space-x-2.5 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-zinc-950 text-white font-medium text-xs sm:text-sm shadow-xs">
-            <Check className="w-4 h-4 text-emerald-400 shrink-0" aria-hidden="true" />
+          <div className="inline-flex items-center space-x-2.5 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950 font-medium text-xs sm:text-sm shadow-xs">
+            <Check className="w-4 h-4 text-emerald-400 dark:text-emerald-600 shrink-0" aria-hidden="true" />
             <span>PathPilot turns the noise into a plan.</span>
           </div>
         </div>

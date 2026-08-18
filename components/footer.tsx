@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
               <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white">
                 <Compass className="w-4 h-4 text-emerald-400" aria-hidden="true" />
               </div>
-              <span className="font-bold text-base text-white tracking-tight">PathPilot AI</span>
+              <span className="font-bold text-base text-white tracking-tight">PathPilot</span>
             </div>
 
             {/* Footer Navigation Links */}
@@ -60,13 +60,19 @@ export const Footer: React.FC = () => {
                 onClick={() => scrollToSection("roadmap")}
                 className="hover:text-white transition-colors focus-ring rounded px-1"
               >
-                Roadmap
+                Roadmaps
+              </button>
+              <button
+                onClick={() => scrollToSection("problem")}
+                className="hover:text-white transition-colors focus-ring rounded px-1"
+              >
+                Resources
               </button>
             </nav>
           </div>
 
           <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-            <p>© {new Date().getFullYear()} PathPilot AI. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} PathPilot. All rights reserved.</p>
 
             {/* Tiny v1.0 label - Easter Egg Trigger (5 clicks within 2s) */}
             <button
